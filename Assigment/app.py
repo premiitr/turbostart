@@ -17,11 +17,11 @@ def get_positions(df, sr):
 # Streamlit UI
 st.title("IMU Trajectory Visualization")
 
-file = "IMU_Data_1.csv"
+file_path = "/workspaces/turbostart/Assigment/IMU_Data_1.csv"
 sampling_rate = 100
 
 # Read the file
-df = pd.read_csv(file)
+df = pd.read_csv(file_path)
     
 # Get Positions
 positions = get_positions(df, sampling_rate)
