@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import os
-
-BASE_DIR = os.getcwd()
 
 # Function to get position by integrating velocity and velocity by integrating acceleration
 # Intuition:
@@ -20,7 +17,7 @@ def get_positions(df, sr):
 # Streamlit UI
 st.title("IMU Trajectory Visualization")
 
-file_path = os.path.join(BASE_DIR, 'IMU_Data_1.csv')
+file_path = 'IMU_Data_1.csv'
 sampling_rate = 100
 
 # Read the file
@@ -36,11 +33,12 @@ try:
     ax = fig.add_subplot(111, projection='3d')
         
     ax.plot(positions[:, 0], positions[:, 1], positions[:, 2], label='Device Trajectory')
+
     ax.set_xlabel('X (units)', fontsize=10)
     ax.set_ylabel('Y (units)', fontsize=10)
     ax.set_zlabel('Z (units)', fontsize=10)
     ax.legend()
-    
+
     st.pyplot(fig)
     
 except Exception as e:
