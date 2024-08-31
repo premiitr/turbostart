@@ -1,2 +1,2 @@
 # turbostart
-Creating IMU Trajectory 
+Plotting Trajectory of the device using IMU dataset
